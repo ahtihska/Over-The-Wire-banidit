@@ -19,6 +19,13 @@
 * [Level 16 - Level 17](#level-16---level-17)
 * [Level 17 - Level 18](#level-17---level-18)
 * [Level 18 - Level 19](#level-18---level-19)
+* [Level 19 - Level 20](#level-19---level-20)
+* [Level 20 - Level 21](#level-20---level-21)
+* [Level 21 - Level 22](#level-21---level-22)
+* [Level 22 - Level 23](#level-22---level-23)
+* [Level 23 - Level 24](#level-23---level-24)
+* [Level 24 - Level 25](#level-24---level-25)
+
 
 ## Level 0
 
@@ -190,3 +197,47 @@ The password for the next level is stored in a file readme in the homedirectory.
 ssh bandit18@bandit.labs.overthewire.org -p 2220
 Password: kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
 ```
+
+
+## Level 19 - Level 20
+To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
+```
+ssh bandit19@bandit.labs.overthewire.org -p 2220
+Password: IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+```
+
+## Level 20 - Level 21
+There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
+
+```
+ssh bandit20@bandit.labs.overthewire.org -p 2220
+Password: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+```
+
+## Level 21 - Level 22
+A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+```
+ssh bandit21@bandit.labs.overthewire.org -p 2220
+Password: gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+```
+
+## Level 22 - Level 23
+A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+```
+ssh bandit22@bandit.labs.overthewire.org -p 2220
+Password: Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+```
+
+## Level 23 - Level 24
+A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+```
+ssh bandit23@bandit.labs.overthewire.org -p 2220
+Password: jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+```
+## Level 24 - Level 25
+A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
+```
+ssh bandit24@bandit.labs.overthewire.org -p 2220
+Password: UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+```
+
